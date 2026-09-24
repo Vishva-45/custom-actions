@@ -8,7 +8,7 @@ jobs:
       - name: Get code
         uses: actions/checkout@v4
       - name: calling custom actions
-        uses: ./github/actions/cache-deps
+        uses: ./.github/actions/cache-deps
       - name: Lint code
         run: npm run lint
  
