@@ -1,5 +1,9 @@
 name: custom actions
 description: cache depedent
+inputs:
+  ipname:
+    description: input for wrk
+    required: true
 runs:
   using: 'composite'
   steps:
@@ -11,6 +15,10 @@ runs:
           key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
-        run: |
-         npm ci
         shell: bash
+        run: npm ci
+      - name: print input
+        shell: bash
+        run: |
+         echo " ${{inputs.ipname}}"
+        

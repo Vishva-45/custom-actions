@@ -9,6 +9,8 @@ jobs:
         uses: actions/checkout@v4
       - name: calling custom actions
         uses: ./.github/actions/cache-deps
+        with:
+          ipname: 'yes passed'
       - name: Lint code
         run: npm run lint
  
