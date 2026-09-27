@@ -8,7 +8,7 @@ jobs:
       - name: Get code
         uses: actions/checkout@v4
       - name: calling custom actions
-        uses: ./.github/actions/cache-deps
+        uses: Vishva-45/Called-repo@v1
         with:
           ipname: 'yes passed'
       - name: Lint code
